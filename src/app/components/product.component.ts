@@ -11,6 +11,8 @@ export class ProductComponent implements OnChanges{
   @Input() product: Product;
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
+  today = new Date();
+
   constructor(){
 
   }
