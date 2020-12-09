@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     BannerComponent,
     NotFoundComponent,
     ProductDetailComponent,
+    LayoutComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
