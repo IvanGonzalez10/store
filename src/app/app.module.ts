@@ -11,6 +11,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,13 @@ import { SharedModule } from './shared/shared.module';
     ProductDetailComponent,
     LayoutComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, SharedModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    SharedModule,
+    CoreModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
