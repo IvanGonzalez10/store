@@ -7,3 +7,7 @@ nav > a.active {
   background: red;
 }
 
+.header-row {
+  width: 100%;
+}
+
