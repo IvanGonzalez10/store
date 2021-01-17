@@ -4,47 +4,58 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from './admin.guard';
 
-
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
     children: [
-      { 
+      {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full',
       },
       {
         path: 'home',
-        loadChildren: () => import ('./home/home.module').then(m => m.HomeModule)
+        loadChildren: () =>
+          import('./home/home.module').then((m) => m.HomeModule),
       },
       {
         path: 'products',
-        loadChildren: () => import ('./products/product.module').then(m => m.ProductModule)
+        loadChildren: () =>
+          import('./products/product.module').then((m) => m.ProductModule),
       },
       {
         path: 'contact',
         canActivate: [AdminGuard],
-        loadChildren: () => import ('./contact/contact.module').then(m => m.ContactModule)
+        loadChildren: () =>
+          import('./contact/contact.module').then((m) => m.ContactModule),
       },
-    ]
+    ],
   },
   {
     path: 'admin',
-    loadChildren: () => import ('./admin/admin.module').then(m => m.AdminModule)
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
   },
   {
     path: '**',
-    loadChildren: () => import ('./not-found/not-found.module').then(m => m.NotFoundModule)
-  }
+    loadChildren: () =>
+      import('./not-found/not-found.module').then((m) => m.NotFoundModule),
+  },
 ];
 
 @NgModule({
   declarations: [],
-  imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules
-  })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
