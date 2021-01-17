@@ -55,9 +55,9 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   getAllProducts() {
-    return this.http.get<Product[]>('http://platzi-store.herokuapp.com/products/');
+    return this.http.get<Product[]>('https://raw.githubusercontent.com/IvanGonzalez10/store/master/data.json');
   }
   getProduct(id: string) {
-    return this.http.get(`http://platzi-store.herokuapp.com/products/${id}`);
+    return this.http.get(`https://platzi-store.herokuapp.com/products/${id}`);
   }
 }
